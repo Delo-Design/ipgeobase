@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="package" method="upgrade">
+    <name>PKG_IPGEOBASE</name>
+    <packagename>multisite</packagename>
+    <creationDate>16.06.2021</creationDate>
+    <author>Cymbal</author>
+    <authorEmail>cymbal@delo-design.ru</authorEmail>
+    <authorUrl>https://delo-design.ru</authorUrl>
+    <copyright>Copyright © 2020 Delo Design. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>1.0</version>
+    <description>PKG_IPGEOBASE_DESCRIPTION</description>
+
+    <updateservers>
+        <server type="extension" priority="1" name="Multisite package">https://hika.su/update/free/pkg_ipgeobase.xml</server>
+    </updateservers>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.pkg_ipgeobase.sys.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.pkg_ipgeobase.sys.ini</language>
+    </languages>
+
+    <files>
+        <folder type="plugin" group="system" id="findcityorregions">plugins/system/findcityorregions</folder>
+        <folder type="library" id="ipgeobase">libraries/ipgeobase</folder>
+    </files>
+
+</extension>
