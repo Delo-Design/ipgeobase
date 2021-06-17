@@ -25,6 +25,7 @@ defined('_JEXEC') or die;
  */
 class plgSystemFindcityorregions extends CMSPlugin
 {
+
 	/**
 	 * Application object
 	 *
@@ -32,6 +33,7 @@ class plgSystemFindcityorregions extends CMSPlugin
 	 * @since  1.0.0
 	 */
 	protected $app;
+
 
 	/**
 	 * Database object
@@ -41,6 +43,7 @@ class plgSystemFindcityorregions extends CMSPlugin
 	 */
 	protected $db;
 
+
 	/**
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
@@ -49,11 +52,12 @@ class plgSystemFindcityorregions extends CMSPlugin
 	 */
 	protected $autoloadLanguage = true;
 
+
 	public function onAjaxFindcityorregions()
 	{
 		$action = $this->app->input->get('action', '');
 
-		if(method_exists($this, $action))
+		if (method_exists($this, $action))
 		{
 			$this->$action();
 		}
@@ -62,14 +66,14 @@ class plgSystemFindcityorregions extends CMSPlugin
 
 	private function getCitiesSearch()
 	{
-		$app = Factory::getApplication();
+		$app   = Factory::getApplication();
 		$input = $app->input;
-		$data = $input->getArray();
-		$q = $data['q'];
+		$data  = $input->getArray();
+		$q     = $data['q'];
 
 		HTMLHelper::addIncludePath(JPATH_LIBRARIES . '/ipgeobase/helpers');
 
-		$filters['filter.q'] = $q;
+		$filters['filter.q']     = $q;
 		$filters['filter.limit'] = 15;
 
 		if ($filters === [])
@@ -89,25 +93,25 @@ class plgSystemFindcityorregions extends CMSPlugin
 
 	private function getCitiesByIds()
 	{
-		$app = Factory::getApplication();
+		$app   = Factory::getApplication();
 		$input = $app->input;
-		$data = $input->getArray();
+		$data  = $input->getArray();
 
-		if(!isset($data['ids']))
+		if (!isset($data['ids']))
 		{
 			JErrorPage::render();
 		}
 
 		$ids = explode(',', $data['ids']);
 
-		if(count($ids) === 0)
+		if (count($ids) === 0)
 		{
 			JErrorPage::render();
 		}
 
-		for($i=0;$i<count($ids);$i++)
+		for ($i = 0; $i < count($ids); $i++)
 		{
-			$ids[$i] = (int)$ids[$i];
+			$ids[$i] = (int) $ids[$i];
 		}
 
 		HTMLHelper::addIncludePath(JPATH_LIBRARIES . '/ipgeobase/helpers');
@@ -129,16 +133,17 @@ class plgSystemFindcityorregions extends CMSPlugin
 		$app->close();
 	}
 
+
 	private function getRegionsSearch()
 	{
-		$app = Factory::getApplication();
+		$app   = Factory::getApplication();
 		$input = $app->input;
-		$data = $input->getArray();
-		$q = $data['q'];
+		$data  = $input->getArray();
+		$q     = $data['q'];
 
 		HTMLHelper::addIncludePath(JPATH_LIBRARIES . '/ipgeobase/helpers');
 
-		$filters['filter.q'] = $q;
+		$filters['filter.q']     = $q;
 		$filters['filter.limit'] = 15;
 
 		if ($filters === [])
@@ -156,27 +161,28 @@ class plgSystemFindcityorregions extends CMSPlugin
 		$app->close();
 	}
 
+
 	private function getRegionsByIds()
 	{
-		$app = Factory::getApplication();
+		$app   = Factory::getApplication();
 		$input = $app->input;
-		$data = $input->getArray();
+		$data  = $input->getArray();
 
-		if(!isset($data['ids']))
+		if (!isset($data['ids']))
 		{
 			JErrorPage::render();
 		}
 
 		$ids = explode(',', $data['ids']);
 
-		if(count($ids) === 0)
+		if (count($ids) === 0)
 		{
 			JErrorPage::render();
 		}
 
-		for($i=0;$i<count($ids);$i++)
+		for ($i = 0; $i < count($ids); $i++)
 		{
-			$ids[$i] = (int)$ids[$i];
+			$ids[$i] = (int) $ids[$i];
 		}
 
 		HTMLHelper::addIncludePath(JPATH_LIBRARIES . '/ipgeobase/helpers');
@@ -197,4 +203,5 @@ class plgSystemFindcityorregions extends CMSPlugin
 
 		$app->close();
 	}
+
 }
