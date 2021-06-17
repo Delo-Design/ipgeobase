@@ -1,4 +1,4 @@
-CREATE TABLE `#__lib_ipgeobase_regions` (
+CREATE TABLE IF NOT EXISTS `#__lib_ipgeobase_regions` (
                                           `id` int(10) UNSIGNED NOT NULL,
                                           `title` varchar(1024) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -129,7 +129,7 @@ COMMIT;
 
 
 
-CREATE TABLE `#__lib_ipgeobase_cities` (
+CREATE TABLE IF NOT EXISTS `#__lib_ipgeobase_cities` (
                                          `id` int(11) NOT NULL,
                                          `title` varchar(1024) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
