@@ -9,5 +9,5 @@
 
 
 ### Документация
-- [Хелпер для IPGeobase]()
-- [Системный плагин]()
+- [Хелпер для IPGeobase](https://github.com/Delo-Design/ipgeobase/blob/master/docs/helper.md)
+- [Системный плагин](https://github.com/Delo-Design/ipgeobase/blob/master/docs/plugin.md)

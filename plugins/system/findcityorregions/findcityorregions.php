@@ -1,12 +1,4 @@
-<?php
-/**
- * @package    multisiteswitch
- *
- * @author     tsymb <your@email.com>
- * @copyright  A copyright
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @link       http://your.url.com
- */
+<?php defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Factory;
@@ -15,7 +7,6 @@ use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Database\DatabaseDriver;
 use Joomla\Registry\Registry;
 
-defined('_JEXEC') or die;
 
 /**
  * Findcityorregions plugin.
