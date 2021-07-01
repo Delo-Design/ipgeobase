@@ -8,7 +8,7 @@
     <authorUrl>https://delo-design.ru</authorUrl>
     <copyright>Copyright © 2020 Delo Design. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <description>Library for city and regions.</description>
 
     <install>
@@ -27,6 +27,7 @@
         <folder>helpers</folder>
         <folder>ipgeobase</folder>
         <folder>sql</folder>
+        <file>ipgeobase.php</file>
     </files>
 
 </extension>
